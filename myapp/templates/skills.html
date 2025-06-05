@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<section class="skills-grid">
+  <div class="skill-card"><h3>PYTHON</h3></div>
+  <div class="skill-card"><h3>C#</h3></div>
+  <div class="skill-card"><h3>JAVASCRIPT</h3></div>
+  <div class="skill-card"><h3>HTML</h3></div>
+  <div class="skill-card"><h3>CSS</h3></div>
+  <div class="skill-card"><h3>ASP.NET</h3></div>
+  <div class="skill-card"><h3>SQL</h3></div>
+  <div class="skill-card"><h3>CSS</h3></div>
+</section>
+
+<style>
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .skill-card {
+    flex: 0 0 160px;
+    height: 80px;
+    background: #111;
+    color: #fff;
+    border-left: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  .skill-card:hover {
+    background: #222;
+    border-left: 3px solid #00ffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+  }
+
+  .skill-card h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+</style>
+{% endblock %}

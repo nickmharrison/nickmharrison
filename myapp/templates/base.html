@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+    <meta charset="UTF-8" />
+    <title>Nick Harrison | Portfolio</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+    <style>
+      #shader-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        display: block;
+        pointer-events: none;
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="shader-bg"></canvas>
+    <div class="frame">
+      <div class="layout">
+        <aside class="sidebar">
+          <h1>Nick Harrison</h1>
+          <p class="subtitle">Designer & Developer</p>
+          <nav>
+            <ul>
+              <li>
+                <a
+                  href="{% url 'home' %}"
+                  class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{% url 'projects' %}"
+                  class="{% if request.resolver_match.url_name == 'projects' %}active{% endif %}"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{% url 'skills' %}"
+                  class="{% if request.resolver_match.url_name == 'skills' %}active{% endif %}"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{% url 'contact' %}"
+                  class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="content">{% block content %}{% endblock %}</main>
+      </div>
+    </div>
+
+    <script>
+      const canvas = document.getElementById("shader-bg");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const stars = [];
+
+      class ShootingStar {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          // Start along the top edge at a random x
+          this.x = Math.random() * canvas.width;
+          this.y = -Math.random() * 50; // slightly above the screen
+
+          this.len = Math.random() * 300 + 100;
+          this.speed = Math.random() * 1.5 + 0.3;
+
+          // Random angle between 20° to 70° down-right
+          const angleDeg = Math.random() * 50 + 20;
+          this.angle = angleDeg * (Math.PI / 180);
+
+          this.alpha = 1;
+          this.maxAlpha = Math.random() * 0.7 + 0.3;
+        }
+
+        update() {
+          this.x += this.speed * Math.cos(this.angle);
+          this.y += this.speed * Math.sin(this.angle);
+
+          if (
+            this.x > canvas.width + this.len ||
+            this.y > canvas.height + this.len
+          ) {
+            this.reset();
+          }
+        }
+
+        draw(ctx) {
+          ctx.save();
+          ctx.globalAlpha = this.maxAlpha;
+          ctx.strokeStyle = "white";
+          ctx.lineWidth = 0.1;
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(
+            this.x - this.len * Math.cos(this.angle),
+            this.y - this.len * Math.sin(this.angle)
+          );
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      for (let i = 0; i < 20; i++) stars.push(new ShootingStar());
+
+      function animate() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < stars.length; i++) {
+          stars[i].update();
+          stars[i].draw(ctx);
+        }
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    </script>
+  </body>
+</html>

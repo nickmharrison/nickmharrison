@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+<section class="projects-grid">
+  <div class="project-card">
+    <h3>IP Scanner</h3>
+    <h3>Python</h3>
+    <p>
+      A simple tool that scans your local network and shows all connected device
+      IPs. Quickly identifies active devices with their IP and MAC addresses for
+      easy network monitoring.
+    </p>
+    <a href="https://github.com/nickmharrison/Check-Ip" class="project-link"
+      >Source Code</a
+    >
+  </div>
+
+  <div class="project-card">
+    <h3>Screen Zoom Utility</h3>
+    <h3>C#</h3>
+    <p>
+      A custom application built for Willmar Industries that lets users zoom in
+      on any area of their screen, across multiple windows. Designed for
+      precision viewing and enhanced accessibility in industrial workflows.
+    </p>
+    <a href="https://github.com/nickmharrison/Zoom-App" class="project-link"
+      >Source Code</a
+    >
+  </div>
+
+  <div class="project-card">
+    <h3>Harrison Printing</h3>
+    <h3>Typescript, Javascript, CSS</h3>
+    <p>
+      A clean, responsive website built for my family’s business, Harrison
+      Printing. Showcases services, contact info, and gallery in a user-friendly
+      layout with custom branding and mobile optimization.
+    </p>
+    <a href="https://harrisonprinting.net/" class="project-link">Website</a>
+    <a
+      href="https://github.com/nickmharrison/HarrisonPrinting"
+      class="project-link"
+      >Source Code
+    </a>
+  </div>
+  <div class="project-card">
+    <h3>IP Sniffer</h3>
+    <h3>Python</h3>
+    <p></p>
+  </div>
+</section>
+<style>
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .project-card {
+    flex: 1 1 calc(25% - 1rem);
+    background: #111;
+    padding: 1rem;
+    border-left: 3px solid #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px; /* Ensures there's enough space for vertical layout */
+  }
+
+  .project-card:hover {
+    background: #222;
+    border-left: 3px solid #00ffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+  }
+
+  .project-card p {
+    font-size: 90%;
+  }
+
+  .project-card h3 {
+    margin-top: 0;
+  }
+</style>
+{% endblock %}
