@@ -148,12 +148,11 @@ body {
 }
 
 .quote-block {
-    position: absolute;
     bottom: 2rem;
     right: 2rem;
     color: #eee;
     font-size: 0.8rem;
-    max-width: 150px;
+    max-width: 120px;
     line-height: 1.6;
     font-weight: 300;
 }

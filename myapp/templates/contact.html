@@ -1,7 +1,61 @@
-{% extends "base.html" %} {% block content %}
-<section class="intro-text">
-  <div class="quote-block">
-    <p><a href="mailto:nickmharrison99" class="contact-link">Contact Me!</a></p>
+{% extends "base.html" %} {% load static %} {% block content %}
+<section
+  class="intro-text"
+  style="
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  "
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      gap: 2.5rem;
+      max-width: 200px;
+      width: 100%;
+      justify-content: center;
+    "
+  >
+    <div
+      style="
+        font-family: 'Space Mono', monospace;
+        color: #ccc;
+        line-height: 1.7;
+        text-align: center;
+        width: 100%;
+      "
+    >
+      <p>
+        <a href="mailto:nickmharrison99" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link">
+        Email</a>
+      </br>
+        <a href="https://github.com/nickmharrison" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+        >Github</a
+        >
+      </br>
+        <a
+        href="https://www.linkedin.com/in/nicholas-harrison-b08811226/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+        >LinkedIn</a
+        >
+      </p>
+    </div>
   </div>
 </section>
 {% endblock %}
