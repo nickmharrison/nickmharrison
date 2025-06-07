@@ -82,39 +82,4 @@
     >
   </div>
 </section>
-<style>
-  .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
-  }
-
-  .project-card {
-    flex: 1 1 calc(25% - 1rem);
-    background: #111;
-    padding: 1rem;
-    border-left: 3px solid #ffffff;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 300px; /* Ensures there's enough space for vertical layout */
-  }
-
-  .project-card:hover {
-    background: #222;
-    border-left: 3px solid #00ffff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
-  }
-
-  .project-card p {
-    font-size: 90%;
-  }
-
-  .project-card h3 {
-    margin-top: 0;
-  }
-</style>
 {% endblock %}

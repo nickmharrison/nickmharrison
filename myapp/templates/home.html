@@ -1,46 +1,12 @@
 {% extends "base.html" %} {% load static %} {% block content %}
-<section
-  class="intro-text"
-  style="
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  "
->
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      gap: 2.5rem;
-      max-width: 900px;
-      width: 100%;
-    "
-  >
+<section class="intro-text">
+  <div class="profile-container">
     <img
       src="{% static 'IMG_2822.webp' %}"
       alt="Profile Photo"
-      style="
-        width: 220px;
-        height: auto;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      "
+      class="profile-photo"
     />
-
-    <div
-      style="
-        font-family: 'Space Mono', monospace;
-        color: #ccc;
-        line-height: 1.7;
-      "
-    >
+    <div class="profile-text">
       <p><strong>Born in Appleton, WI</strong></p>
       <p><strong>December 26, 2000</strong></p>
       <p>
@@ -50,7 +16,7 @@
       </p>
       <p>
         Outside of programming, I’m probably in the gym, sketching out dumb
-        ideas, or playing some videos games to relax.
+        ideas, or playing some video games to relax.
       </p>
     </div>
   </div>
