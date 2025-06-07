@@ -12,6 +12,14 @@ STATICFILES_DIRS = [
 SECRET_KEY = 'django-insecure-=tq2jyq=842emgxsx+7p7mq9ml(-ar3m$s+x(i%5ne8e%2&tea'
 DEBUG = True  # Change to False in production
 
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    ...
+]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
