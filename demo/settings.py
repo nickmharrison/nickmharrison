@@ -4,7 +4,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/myapp/static/'
-STATIC_ROOT = BASE_DIR / '/staticfiles/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'myapp' / 'static',
 ]
