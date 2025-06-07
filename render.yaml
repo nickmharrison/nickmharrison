@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: nickmharrison-1
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn demo.wsgi:application"
+    staticPublishPath: staticfiles
+    staticRoutes:
+      - source: /static/(.*)
+        destination: /static/$1
