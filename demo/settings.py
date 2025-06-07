@@ -3,14 +3,12 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✅ Static files
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'myapp' / 'static',
 ]
 
-# ✅ Security
 SECRET_KEY = 'django-insecure-=tq2jyq=842emgxsx+7p7mq9ml(-ar3m$s+x(i%5ne8e%2&tea'
 DEBUG = True  # Change to False in production
 
@@ -21,7 +19,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-# ✅ Installed apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
