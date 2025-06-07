@@ -17,6 +17,7 @@ ALLOWED_HOSTS = [
     'nickmharrison.com',
     'www.nickmharrison.com',
     '127.0.0.1',
+    'nickmharrison-1-production.up.railway.app'
 ]
 
 INSTALLED_APPS = [
