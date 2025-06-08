@@ -116,12 +116,6 @@ body {
     z-index: 9999;
 }
 
-.audio-controls input[type="range"] {
-    width: 150px;
-    background: transparent;
-    -webkit-appearance: none;
-}
-
 .audio-controls input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 12px;
