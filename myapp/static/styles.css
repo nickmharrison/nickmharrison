@@ -218,6 +218,7 @@ body {
 
 .project-card {
     flex: 1 1 calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
     background: #111;
     padding: 1rem;
     border-left: 3px solid #ffffff;
@@ -227,6 +228,7 @@ body {
     justify-content: space-between;
     min-height: 300px;
 }
+
 
 .project-card:hover {
     background: #222;
